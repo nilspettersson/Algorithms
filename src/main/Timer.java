@@ -17,8 +17,8 @@ public class Timer {
 		endTime = System.nanoTime();
 	}
 	
-	public long getTime() {
-		return endTime - startTime;
+	public long getTime(int steps) {
+		return (endTime - startTime) / steps;
 	}
 	
 	public void reset() {
