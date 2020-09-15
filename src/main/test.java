@@ -9,15 +9,20 @@ public class test {
 
 	public static void main(String[] args) {
 		
-		int[] array = generateArray(10000);
+		int[] array = generateArray(100000);
+		printArray(array);
+		System.out.println("");
+		//int[] array = new int[] {2,3,5,1,4,9};
 		Instant start = Instant.now();
-		Sorting.bubbleSort(array, false);
+		//Sorting.bubbleSort(array, true);
+		Sorting.quickSort(array);
 		
 		Instant finish = Instant.now();
 		long timeSmall = Duration.between(start, finish).toMillis();
-		System.out.println(timeSmall);
+		printArray(array);
 		
-		//printArray(array);
+		System.out.println("");
+		System.out.println(timeSmall);
 	}
 	
 	public static int[] generateArray(int size) {
@@ -41,7 +46,7 @@ public class test {
 	
 	public static void printArray(int[] array) {
 		for(int i = 0; i < array.length; i++) {
-			System.out.println(array[i]);
+			System.out.print(array[i] + " ");
 		}
 	}
 
